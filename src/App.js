@@ -21,7 +21,7 @@ function App() {
 
        <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand onClick={()=>{ navigate('/')}}>Shoe Aat Shop</Navbar.Brand>
+          <Navbar.Brand onClick={()=>{ navigate('/')}}>Shose Aat Shop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link className='home' onClick={()=>{navigate('/')}}>Home</Nav.Link>
             <Nav.Link className='datail' onClick={()=>{ navigate('/detail')}}>Cart</Nav.Link>
