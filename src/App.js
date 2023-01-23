@@ -47,7 +47,7 @@ function App() {
         </div>
        </div>
        </>}/>
-       <Route path='/about/:id' element={<ShoseDetail shoes={shoes}/>}/>
+       <Route path='/detail/:id' element={<ShoseDetail shoes={shoes}/>}/>
       </Routes>
 
        
