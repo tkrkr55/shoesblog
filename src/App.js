@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { useState } from 'react';
+import { createContext, useState, } from 'react';
 import data from './data'
 import {Navbar, Container , Nav} from 'react-bootstrap';
 import { Shose } from './component/Shose';
@@ -9,15 +9,22 @@ import { Routes,Route,Link,useNavigate,Outlet} from 'react-router-dom'
 import { ShoseDetail } from './page/ShoseDetail';
 import { About } from './component/About';
 import axios from 'axios'
-import { ClipLoader } from 'react-spinners';
-import { Loading } from './component/Loading';
+import { Cart } from 'component/Cart';
+
+
+// state 보관함임
+export  let Context1 = createContext()
 
 function App() {
 
+
+
   let [shoes,setShoes] =useState(data)
+  let [재고]=useState([10,11,12])
   let [count,setCount] =useState(2)
   const navigate = useNavigate()
-
+ 
+  
   
   return (
     <div className="App">
@@ -70,6 +77,7 @@ function App() {
        
        </>}/>
        <Route path='/detail/:id' element={<ShoseDetail shoes={shoes}/>}/>
+       <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
 
        

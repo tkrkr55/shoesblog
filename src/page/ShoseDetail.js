@@ -1,10 +1,11 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useContext } from 'react'
 import {useParams} from 'react-router-dom'
 import style from 'styled-components'
 import {Nav,} from 'react-bootstrap'
 
 
 export const ShoseDetail = ({shoes}) => {
+
 
   let [경고,경고변경] =useState('')
   let [알럿트,알럿트변경] =useState(true)
@@ -37,6 +38,7 @@ useEffect(()=>{
  }
 },[])
 
+
   
   let {id} = useParams()
   let 찾은상품 =shoes.find((data)=>{return data.id == id})
@@ -49,6 +51,7 @@ useEffect(()=>{
       알럿트 == true?
       <div className='my-alert2'>2초이내 구매시 할인</div> : null
     }
+    
   
     <div className="row">
     <div className="col-md-6">
@@ -80,7 +83,7 @@ useEffect(()=>{
       </Nav.Item>
     
     </Nav>
-    <TabContent 탭={탭}/>
+    <TabContent 탭={탭} shoes={shoes}/>
     
    
   
@@ -89,6 +92,7 @@ useEffect(()=>{
   )  
 }
 function TabContent({탭}){
+  
   let [fade,setfade]=useState('')
   useEffect(()=>{
     setTimeout(()=>{
@@ -98,10 +102,11 @@ function TabContent({탭}){
       setfade("")
     }
     
+    
    
   },[탭])
 return(<div className={`start ${fade}`}>
-  {[<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][탭]}
+  {[<div>내용1</div>,<div>내용1</div>,<div>내용2</div>][탭]}
 </div>)
 
 }
