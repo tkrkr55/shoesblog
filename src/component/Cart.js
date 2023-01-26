@@ -35,7 +35,7 @@ export const Cart = () => {
          <td>{b[i].name}</td>
          <td>{b[i].count}</td>
          <td><button onClick={()=>{
-          dispatch(changeage(b[i].id)) 
+         dispatch(changeage(b[i].id)) 
           
          }}>+</button></td>
        </tr>

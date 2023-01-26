@@ -33,8 +33,9 @@ function App() {
           <Navbar.Brand onClick={()=>{ navigate('/')}}>Shose Aat Shop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link className='home' onClick={()=>{navigate('/')}}>Home</Nav.Link>
-            <Nav.Link className='datail' onClick={()=>{ navigate('/detail')}}>Cart</Nav.Link>
-        
+            <Nav.Link className='datail' onClick={()=>{ navigate('/detail')}}>dtail</Nav.Link>
+            <Nav.Link className='cart' onClick={()=>{ navigate('/cart')}}>Cart</Nav.Link>
+
           </Nav>
         </Container>
         </Navbar>

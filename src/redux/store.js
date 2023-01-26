@@ -15,13 +15,16 @@ let list = createSlice({
 
     reducers:{
       changeage(state,action){
-       let 번호 =  state.findIndex((a)=>{return a.id === action.payload })
-        state[번호].count ++
+   let 번호 = state.findIndex((a)=> a.id == action.payload)
+   state[번호].count++
+      },
+      addItem(state,action){
+        state.push(action.payload)
       }
     }
 })
 
-export let {changeage} = list.actions
+export let {changeage,addItem} = list.actions
 
 export default configureStore({
   reducer :{
