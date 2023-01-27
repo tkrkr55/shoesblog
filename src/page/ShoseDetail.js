@@ -4,10 +4,10 @@ import style from 'styled-components'
 import {Nav,} from 'react-bootstrap'
 import {addItem} from '../redux/store.js';
 import { useDispatch } from 'react-redux';
-
+import { useNavigate } from 'react-router-dom';
 export const ShoseDetail = ({shoes}) => {
 
-
+ let navigate = useNavigate()
   let [경고,경고변경] =useState('')
   let [알럿트,알럿트변경] =useState(true)
   let [탭,탭변경] =useState(0)
@@ -51,7 +51,7 @@ useEffect(()=>{
     
     {
       알럿트 == true?
-      <div className='my-alert2'>2초이내 구매시 할인</div> : null
+      <div className='my-alert2'>지금 구매시 20% 할인</div> : null
     }
     
   
@@ -65,9 +65,13 @@ useEffect(()=>{
       <p>{찾은상품.content}</p>
       <p>{찾은상품.price}원</p>
       <button className="btn btn-danger"
+      
       onClick={()=>{
+        
         dispatch(addItem({id :찾은상품.id, name : 찾은상품.title, count : 1}))
+        navigate('/cart')
       }}
+      
       >주문하기</button> 
     </div>
   </div>

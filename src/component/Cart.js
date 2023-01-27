@@ -1,7 +1,7 @@
 import React from 'react'
 import {Table} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
-import { changeage } from 'redux/store'
+import { changeage,deletItem } from 'redux/store'
 import {changeName ,increase,getid} from '../store/userSlice'
 
 export const Cart = () => {
@@ -15,10 +15,7 @@ export const Cart = () => {
   return (
   
     <div>
-      {a.user.name} {a.user.age}의 장바구니
-      <button onClick={()=>{
-        dispatch(changeage())
-      }}>버튼</button>
+     
       <Table>
   <thead>
     <tr>
@@ -37,7 +34,13 @@ export const Cart = () => {
          <td><button onClick={()=>{
          dispatch(changeage(b[i].id)) 
           
-         }}>+</button></td>
+         }}>+</button>
+         <button
+         onClick={()=>{
+          dispatch(deletItem(b[i].id))
+         }}
+         >- </button>
+         </td>
        </tr>
                
         )}
