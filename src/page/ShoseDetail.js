@@ -79,7 +79,7 @@ useEffect(()=>{
       <Nav.Item>
         <Nav.Link onClick={()=>{
           탭변경(0)
-        }} eventKey="link0">버튼0</Nav.Link>
+        }} eventKey="link0">버튼1</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link onClick={()=>{
