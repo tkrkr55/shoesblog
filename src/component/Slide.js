@@ -1,4 +1,4 @@
-
+import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,10 +9,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 // import required modules
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
-export default function ShoseNav() {
+export default function Slide() {
   const items = [
     { src: "/신발이미지/신발배너1.jpg" },
-    { src: "/신발이미지/신발배너2.jpg" },
+    { src: "/신발이미지/신발배너4.jpg" },
     { src: "/신발이미지/신발배너3.jpg" },
   ];
  
@@ -37,7 +37,9 @@ export default function ShoseNav() {
         {items.map((item, idx) => {
           return (
             <SwiperSlide key={idx}>
-              <img src={item.src} />
+              <div className="main_wrap">
+              <img className="main_img" src={item.src} />
+              </div>
             </SwiperSlide>
           );
         })}

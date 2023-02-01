@@ -3,7 +3,7 @@ import {Table} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import { changeage,deletItem } from 'redux/store'
 import {changeName ,increase,getid} from '../store/userSlice'
-
+import { FiPlus,FiTrash2 } from 'react-icons/fi';
 export const Cart = () => {
 
   let a = useSelector((state)=>{return state})
@@ -31,15 +31,15 @@ export const Cart = () => {
          <td>{b[i].id}</td>
          <td>{b[i].name}</td>
          <td>{b[i].count}</td>
-         <td><button onClick={()=>{
+         <td><button className='myButton ' onClick={()=>{
          dispatch(changeage(b[i].id)) 
           
-         }}>+</button>
-         <button
+         }}><FiPlus/></button>
+         <button className='myButton '
          onClick={()=>{
           dispatch(deletItem(b[i].id))
          }}
-         >- </button>
+         ><FiTrash2/></button>
          </td>
        </tr>
                

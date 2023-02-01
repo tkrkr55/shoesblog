@@ -1,3 +1,22 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+*{
+  font-family: 'NanumSquareNeo-Variable';
+}
 .main_bg{
   height: 400px;
   background-image: url('https://p4.wallpaperbetter.com/wallpaper/945/535/698/nike-purple-wallpaper-preview.jpg');
@@ -14,14 +33,20 @@
 }
 
 .home {
-  color:white;
+  color:gray;
   text-decoration: none;
   padding-left:30px;
   font-size: 1.2rem;
 }
 
 .datail{
-  color:white; text-decoration: none;
+  color:gray; text-decoration: none;
+  padding-left:30px;
+  font-size: 1.2rem;
+}
+
+.cart{
+  color:gray; text-decoration: none;
   padding-left:30px;
   font-size: 1.2rem;
 }
@@ -81,6 +106,11 @@
 	top:1px;
 }
 
+.myButton_main{
+  display: flex;
+  justify-content: center;
+}
+
 
 .start {
 opacity: 0;
@@ -91,3 +121,139 @@ opacity: 0;
  
 }
 
+.myButton {
+	box-shadow:inset -5px -1px 22px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:50px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-size:p5x;
+	font-weight:bold;
+	padding:5px 13px;
+	text-decoration:none;
+	text-shadow:-12px 4px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+   
+
+.swiper-inner img {
+  width: 100%;
+}
+
+.non-scroll{
+  overflow: hidden;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px;
+  }
+  .swiper-pagination-horizontal {
+  opacity: 0.5;
+  }
+
+  .main_wrap{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .main_img{
+    width: 84%;
+  
+    height: 400px;
+  }
+
+  .d-flex{
+    max-width: 600px;
+  }
+
+  .btn-danger{
+    width: 370px;
+    margin:10px 0px ;
+  }
+
+  .detail_text{
+    font-size: 0.7rem;
+    width: 100%;
+    background-color: rgba(231, 231, 231, 0.455);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    padding:20px;
+    margin-top: 20px;
+  }
+
+  .detail_text span{
+    color:rgb(88, 88, 230);
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  .shose_img{
+    display: flex;
+    justify-content: center;
+  }
+
+  .Detail_title{
+    font-size: 1.3rem;
+    font-family: 'yg-jalnan'
+  }
+
+  .Detial_wrap{
+    margin-top: 50px;
+  }
+
+  .x-text-upper{
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+    font-size: 0.4rem;
+  }
+
+  strong{
+    color:red;
+  }
+
+  .Detail_title{
+    margin-top: -30px;
+  }
+
+  @-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+  @keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.test_obj {
+  
+    position: relative;
+    -webkit-animation: fadeInDown 1s;
+            animation: fadeInDown 1s;
+}

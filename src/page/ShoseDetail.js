@@ -1,10 +1,11 @@
 import React, { useEffect,useState,useContext } from 'react'
 import {useParams} from 'react-router-dom'
 import style from 'styled-components'
-import {Nav,} from 'react-bootstrap'
+import {Container, Nav,Row,Col} from 'react-bootstrap'
 import {addItem} from '../redux/store.js';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 export const ShoseDetail = ({shoes}) => {
 
  let navigate = useNavigate()
@@ -55,15 +56,20 @@ useEffect(()=>{
     }
     
   
-    <div className="row">
-    <div className="col-md-6">
-      <img src={"/신발이미지/shoes"+(id)+".jpg"} width="100%" />
+    
+    <Container className='Detial_wrap'>
+      <Row>
+        <Col>
+        <div className="row shose_img">
+        <img src={"/신발이미지/shoes"+(id)+".jpg"} width="100%" />
+    <p className='detail_text'><span>{id}명이</span>이 상품을 보는중에요 👀</p>
     </div>
-    <div className="col-md-6">
-     <input onChange={(e)=>{경고변경(e.target.value)}}></input>
-      <h4 className="pt-5">{찾은상품.title}</h4>
-      <p>{찾은상품.content}</p>
-      <p>{찾은상품.price}원</p>
+        </Col>
+        <Col>
+        <div className="col-md-6">
+      <p className="pt-5 Detail_title">{찾은상품.title}</p>
+      
+      <p><strong>10% </strong>{찾은상품.price}원</p>
       <button className="btn btn-danger"
       
       onClick={()=>{
@@ -73,8 +79,31 @@ useEffect(()=>{
       }}
       
       >주문하기</button> 
+      <div className='pd-x-text-layout'>
+        <div className='x-text-upper'>
+          <p className='x-text'>
+            <span className='x-text-icon'>ㄴ</span>
+            <span> 구매 후기 작성 시 </span>
+            <span><strong>1.0%</strong>"적립"</span>
+          </p>
+          <p className='x-text'> + 20원</p>
+        </div>
+        <div className='x-text-upper'>
+          <p className='x-text'>
+            <span className='x-text-icon'>ㄴ</span>
+            <span> 구매 확정시</span>
+            <span><strong>0.5%</strong>"적립"</span>
+          </p>
+          <p className='x-text'> + 10원</p>
+        </div>
+      </div>
     </div>
-  </div>
+      </Col>
+      </Row>
+      </Container>
+     
+    
+
   <Nav fill variant="tabs" defaultActiveKey="link0">
       <Nav.Item>
         <Nav.Link onClick={()=>{
