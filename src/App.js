@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { createContext, useState, } from 'react';
+import { createContext, useEffect, useState, } from 'react';
 import data from './data'
 import {Navbar, Container , Nav,Form,Button} from 'react-bootstrap';
 import { Shose } from './component/Shose';
@@ -10,27 +10,27 @@ import { FiShoppingCart } from 'react-icons/fi';
 import axios from 'axios'
 import { Cart } from 'component/Cart';
 import Slide from 'component/Slide';
-
+import { useSearchParams } from 'react-router-dom';
 
 // state 보관함임
 export  let Context1 = createContext()
 
 function App() {
 
-
-
+  const [query,setQuery] =useSearchParams();
+  let searchQuery =query.get('q')||""
+  console.log(searchQuery)
   let [shoes,setShoes] =useState(data)
   let [재고]=useState([10,11,12])
   let [count,setCount] =useState(2)
   const navigate = useNavigate()
- 
   
   
   return (
     <div className="App">
       <Navbar className='test_obj' bg="light" expand="lg">
       <Container fluid>
-        <Link to="/" className='home'  href="#">NIKE SHOP</Link>
+        <Link to="/" className='home_title'  href="#">나이샵</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -45,15 +45,7 @@ function App() {
          
          
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Go</Button>
-          </Form>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

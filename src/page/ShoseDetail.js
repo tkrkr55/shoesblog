@@ -5,6 +5,7 @@ import {Container, Nav,Row,Col} from 'react-bootstrap'
 import {addItem} from '../redux/store.js';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Detailinfo from 'component/Detailinfo.js';
 
 export const ShoseDetail = ({shoes}) => {
 
@@ -104,48 +105,9 @@ useEffect(()=>{
      
     
 
-  <Nav fill variant="tabs" defaultActiveKey="link0">
-      <Nav.Item>
-        <Nav.Link onClick={()=>{
-          탭변경(0)
-        }} eventKey="link0">버튼1</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={()=>{
-          탭변경(1)
-        }} eventKey="link1">버튼1</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={()=>{
-          탭변경(2)
-        }}  eventKey="link2">버튼2</Nav.Link>
-      </Nav.Item>
-    
-    </Nav>
-    <TabContent 탭={탭} shoes={shoes}/>
-    
-   
-  
 </div> 
 </div>
   )  
 }
-function TabContent({탭}){
-  
-  let [fade,setfade]=useState('')
-  useEffect(()=>{
-    setTimeout(()=>{
-      setfade('end')
-    },100)
-    return()=>{
-      setfade("")
-    }
-    
-    
-   
-  },[탭])
-return(<div className={`start ${fade}`}>
-  {[<div>내용1</div>,<div>내용1</div>,<div>내용2</div>][탭]}
-</div>)
 
-}
+

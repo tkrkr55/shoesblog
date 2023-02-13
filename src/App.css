@@ -11,6 +11,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SaenggeoJincheon';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/SaenggeoJincheon.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 .notosanskr * { 
  font-family: 'Noto Sans KR', sans-serif;
 }
@@ -23,6 +29,12 @@
   background-position: center;
 }
 
+@font-face {
+  font-family: 'HS-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 .shoseimg {
   width: 400px;
   height: 300px;
@@ -36,7 +48,8 @@
   color:gray;
   text-decoration: none;
   padding-left:30px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-family: 'SaenggeoJincheon';
 }
 
 .datail{
@@ -52,7 +65,7 @@
 }
 
 .home:hover{
-  color:gray;
+  color:black;
 }
 
 .datail:hover{
@@ -167,7 +180,7 @@ opacity: 0;
     width: 100%;
   }
   .main_img{
-    width: 84%;
+    width: 100%;
   
     height: 400px;
   }
@@ -256,4 +269,23 @@ opacity: 0;
     position: relative;
     -webkit-animation: fadeInDown 1s;
             animation: fadeInDown 1s;
+}
+
+.details_text{
+  padding: 20px;
+  font-size: 1rem;
+  word-break: keep-all;
+}
+
+
+.home_title{
+  text-decoration: none;
+  color:#000000d1;
+  font-family: 'SaenggeoJincheon';
+  font-size: 1.6rem;
+  
+}
+
+.home_title:hover{
+ color:black; 
 }

@@ -4,6 +4,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import { changeage,deletItem } from 'redux/store'
 import {changeName ,increase,getid} from '../store/userSlice'
 import { FiPlus,FiTrash2 } from 'react-icons/fi';
+
+function Child(){
+  return 
+}
+
 export const Cart = () => {
 
   let a = useSelector((state)=>{return state})
@@ -13,9 +18,9 @@ export const Cart = () => {
  
 
   return (
-  
+    
     <div>
-     
+     <Child></Child>
       <Table>
   <thead>
     <tr>
